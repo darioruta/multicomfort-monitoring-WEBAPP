@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Io3 - Area Personale</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- FAVOURITE ICON -->
+    <link rel="icon" type="image/png" href="images/fav_icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> <!--LO POSSO ANCHE RIMUOVERE MA PER ADESSO LASCIO COSI-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="css/dashboard_style.css">
+
+
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section id="testa" class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#testa" class="navbar-brand">Io3 - Area Personale</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="#tempo-reale" class="smoothScroll">Tempo Reale</a></li>
+                         <li><a href="#comfort-totale" class="smoothScroll">Comfort Totale</a></li>
+                         <li><a href="#iaq" class="smoothScroll">IAQ</a></li>
+                         <li><a href="#termico" class="smoothScroll">Termico</a></li>
+                         <li><a href="#acustico" class="smoothScroll">Acustico</a></li>
+                         <li><a href="#visivo" class="smoothScroll">Visivo</a></li>
+                         <li><a href="#statistiche" class="smoothScroll">Avanzati</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                            <span style="padding-top: 10px;" class="material-symbols-outlined user-icon" onclick="openUserCard()">account_circle</span>
+                                <div class="user-card">
+                                    <div class="user-card-content">
+                                        <p id="nome_utente_tendina" class="menu-tendina-utente" style="text-align: center;">Nome utente</p>
+                                        <div class="linea-tendina"></div>
+                                        <p class="menu-tendina-utente" onclick="logout()" style="text-align: center; font-weight: 800;">Logout</p>
+                                    </div>
+                                </div>
+                       
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="row">
+
+                <div class="owl-carousel owl-theme">
+                         <div class="item item-first">
+                              <div class="caption">
+                                   <div class="container">
+                                    <div class="col-md-8 col-sm-12">
+                                        <h3>Area Personale</h3>
+                                        <h1>Benvenuto nella console di gestione del tuo comfort!</h1>  <!--AGGIORNARE CON jquery-->
+                                                                               
+                                   </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="item item-second-dashboard">
+                            <div class="caption">
+                                 <div class="container">
+                                    <div class="col-md-8 col-sm-12">
+                                        <h3>DASHBOARD</h3>
+                                        <h1>Statistiche, valori in tempo reale e indicatori di comfort,</h1>  <!--AGGIORNARE CON jquery-->
+                                        <h1 class="welcome_user"> All in one!</h1>
+                                       
+                                   </div>
+                                 </div>
+                            </div>
+                       </div>
+
+
+                </div>
+            </div>
+
+     </section>
+
+    <section id="kits" class="border-bottom" id="solution"  data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <div> 
+                        <h2 id="welcome_name" style="margin-bottom: 20px;">Ciao Dario Ruta!</h2>
+                        <div class="linea"></div>
+
+                    </div>
+                
+                    <h2>I tuoi KITs</h2>
+                    <h4>Seleziona un Kit</h4>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-8" id="kit_list_container" style="background-color: #f7f7f7;">
+            
+            </div>
+
+        
+            <div class="col-md-4 col-sm-4">
+                <div class="text-right" id="ww_d796297e1c077" v='1.3' loc='id' a='{"t":"horizontal","lang":"it","sl_lpl":1,"ids":["wl7980"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://meteolabs.fr/meteo_turin/semaine/" id="ww_d796297e1c077_u" target="_blank">Turin météo pour 7 jours</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_d796297e1c077"></script>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div id="dashboard_generale" class="container">
+
+        <div style="display: flex; justify-content: center;">
+            <div style="text-align: center;">
+              <h3 id="titolo_kit" style="margin-bottom: 80px;">NESSUN KIT SELEZIONATO</h3>
+              <h3 id="id_kit_selected" style="display: none;">NONE</h3>
+            </div>
+        </div>
+
+        <div id="da_nascondere" class="nascondi">
+
+            <div id="tempo-reale" class="row wow fadeInUp" >
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3>MISURE IN TEMPO REALE</h3> 
+                    
+                </div>
+                <div class="main-cards">
+                    <div class="four-cards">
+                        <div id="rt_card_temp" class="card">
+                            <div class="card-inner"> 
+                                <h4>TEMP</h4>
+                                <span class="material-symbols-outlined">
+                                    device_thermostat
+                                    </span>
+                            </div>
+                            <h3 id="card_temp_rt">23.9 °C</h3>
+                        </div>
+                        <div id="rt_card_hum" class="card">
+                            <div class="card-inner">
+                                <h4>UMIDITA</h4>
+                                <span id="rt_hum_card" class="material-symbols-outlined">humidity_percentage</span>
+                            </div>
+                            <h3 id="card_hum_rt">30%</h3>
+                        </div>
+                        <div id="rt_card_air_speed" class="card">
+                            <div class="card-inner">
+                                <h4>VELOCITA' ARIA</h4>
+                                <span class="material-symbols-outlined">airwave</span>
+                            </div>
+                            <h3 id="card_air_speed_rt">0.2 m/s</h3>
+                        </div>
+                        <div id="rt_card_rumore" class="card">
+                            <div class="card-inner">
+                                <h4>RUMORE</h4>
+                                <span class="material-symbols-outlined">noise_aware</span>
+                            </div>
+                            <h3 id="card_rumore_rt">100 db</h3>
+                        </div>
+                    </div>
+                    <div class="four-cards">
+                        <div id="rt_card_pm10" class="card">
+                            <div class="card-inner">
+                                <h4>PM10</h4>
+                                <span class="material-symbols-outlined">fact_check</span>
+                               
+                            </div>
+                            <div class="card-inner">
+                                <h3 id="card_pm10_rt">4.5 ug/m3</h3>
+                                
+                               
+                            </div>
+                            
+                        </div>
+                        <div id="rt_card_co2" class="card">
+                            <div class="card-inner">
+                                <h4>CO2</h4>
+                                <span class="material-symbols-outlined">co2</span>
+                            </div>
+                            <h3 id="card_co2_rt"> 1143 ug/m3</h3>
+                        </div>
+                        <div id="rt_card_luce" class="card">
+                            <div class="card-inner">
+                                <h4>LUCE</h4>
+                                <span class="material-symbols-outlined">wb_sunny</span>
+                            </div>
+                            <h3 id="card_luce_rt">225 lux</h3>
+                        </div>
+                        <div id="rt_card_mrt" class="card">
+                            <div class="card-inner">
+                                <h4>MRT</h4>
+                                <span class="material-symbols-outlined">nest_heat_link_e</span>
+                            </div>
+                            <h3 id="card_mrt_rt">22.1 °C</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="comfort-totale" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3> OVERALL COMFORT CARD </h3> 
+                    
+                </div>
+                <div class="overall-comfort-row">
+    
+                    <div class="charts-card-overall-comfort">
+                        <div id="radial-bar-chart"></div>
+                    </div>
+                    <div class="four-cards"> <!-- MI METTE LE 4 CARD IN PILA A 2 A 2-->
+                        <div id="overall_thermal" class="card">
+                            <div class="card-inner">
+                                <h4>TEMPERATURA OPERATIVA</h4>
+                                <span class="material-symbols-outlined">device_thermostat</span>
+                            </div>
+                            <h3 id="overall_thermal_val">3</h3>
+                        </div>
+    
+                        <div  id="overall_acoustic" class="card">
+                            <div class="card-inner">
+                                <h4>COMFORT ACUSTICO</h4>
+                                <span class="material-symbols-outlined">noise_aware</span>
+                            </div>
+                            <h3  id="overall_acoustic_val">200 db</h3>
+                            
+                        </div>
+                    
+                
+                        <div  id="overall_visive" class="card">
+                            <div class="card-inner">
+                                <h4>COMFORT VISIVO</h4>
+                                <span class="material-symbols-outlined">lightbulb</span>
+                            </div>
+                            <h3 id="overall_visive_val">GOOD</h3>
+                        </div>
+    
+                        <div  id="overall_IAQ" class="card">
+                            <div class="card-inner">
+                                <h4>IAQ RATE</h4>
+                                <span class="material-symbols-outlined">
+                                    pulmonology
+                                    </span>
+                            </div>
+                            <h3 id="overall_IAQ_val">8/10</h3>
+                        </div>    
+                    </div>
+                </div>
+            
+            </div>
+    
+            <div></div>
+    
+    
+            <div id="iaq" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div  class="main-title">
+                    <h3>QUALITA DELL'ARIA  <span class="material-symbols-outlined" >sick</span></h3>
+                </div>
+                <div class="main-title" style="margin-top: 10px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filtri Temporali<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a  href="#iaq" onClick="getDataDayIAQ()">Ultime 24h (Default)</a></li>
+                                <li><a  href="#iaq" onClick='getData72IAQ()'>Ultime 72h</a></li>
+                                <li><a  href="#iaq" onClick='getDataWeekIAQ()'>Settimana</a></li>
+                                <li><a  href="#iaq" onClick='getDataALLIAQ()'>Tutto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="overall-comfort-row" > <!--TAG CHE CREA 2 COLONNE DI UGUALE DIMENSIONE-->
+                    <div class="charts-card">
+                        <div id="co2-chart"></div>
+                        
+                    </div>
+        
+                    <div class="charts-card">
+                       
+                        <div id="co2-out-torta"></div>
+                        
+                    </div>
+                </div>
+                <div class="overall-comfort-row" > <!--TAG CHE CREA 2 COLONNE DI UGUALE DIMENSIONE-->
+                    <div class="charts-card">
+                        <div id="air-speed-chart"></div>
+                    </div>
+        
+                    <div class="charts-card">
+                        
+                       
+                        <div id="pm10-chart"></div>
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div id="termico" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3>COMFORT TERMICO <span class="material-symbols-outlined">thermostat_auto</span></h3>
+                </div>
+                <div class="main-title" style="margin-top: 10px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filtri Temporali<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a  href="#termico" onClick="getDataDayThermal()">Ultime 24h (Default)</a></li>
+                                <li><a  href="#termico" onClick='getData72Thermal()'>Ultime 72h</a></li>
+                                <li><a  href="#termico" onClick='getDataWeekThermal()'>Settimana</a></li>
+                                <li><a  href="#termico" onClick='getDataALLThermal()'>Tutto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="overall-comfort-row"> <!--TAG CHE CREA 2 COLONNE DI UGUALE DIMENSIONE-->
+                    <div class="charts-card">
+                        <div id="ppd-chart"></div>
+                    </div>
+                    <div class="two-columns">
+                        
+                        <div class="two-cards">
+                            <div id="pmv_ashrae" class="card">
+                                <div class="card-inner">
+                                    <h4>MODELLO ADATTIVO </h4> <!--PRIMA ASHRAE-->
+                                    <span class="material-symbols-outlined">thermostat_auto</span>
+                                </div>
+                                <h3 id="pmv_ashrae_val" >3</h3>
+                            </div>
+        
+                            <div id="pmv_europe" class="card">
+                                <div class="card-inner">
+                                    <h4>PMV - EUROPE</h4>
+                                    <span class="material-symbols-outlined">
+                                        thermostat_auto
+                                        </span>
+                                </div>
+                                <h3 id="pmv_europe_val">0</h3>
+                            </div>    
+        
+                        </div>
+                        <div class="two-cards">
+                            <div id="tc_out_range" class="card">
+                                <div class="card-inner">
+                                    <h4>Ore Comfortevoli settimanali (%)</h4>
+                                    <span class="material-symbols-outlined">thermostat_auto</span>
+                                </div>
+                                <h3 id="tc_out_range_val" >NO DATA</h3>
+                            </div>
+        
+                            <div id="tdc_out_range" class="card">
+                                <div class="card-inner">
+                                    <h4>Ore Dis-Comfort settimanali (%)</h4>
+                                    <span class="material-symbols-outlined">
+                                        thermostat_auto
+                                        </span>
+                                </div>
+                                <h3 id="tdc_out_range_val">NO DATA</h3>
+                            </div>    
+        
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="overall-comfort-row" >
+                    <div class="charts-card">
+                        
+                       
+                        <div id="pmv-chart"></div>
+                    </div>
+        
+                    <div class="charts-card">
+                        <div id="temperatura-chart"></div>
+                        <!--<div id="mean-radiant-temp-chart"></div>-->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="acustico" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3>COMFORT ACUSTICO</h3>
+                </div>
+                <div class="main-title" style="margin-top: 10px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filtri Temporali<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a  href="#acustico" onClick="getDataDayAcoustic()">Ultime 24h (Default)</a></li>
+                                <li><a  href="#acustico" onClick='getData72Acoustic()'>Ultime 72h</a></li>
+                                <li><a  href="#acustico" onClick='getDataWeekAcoustic()'>Settimana</a></li>
+                                <li><a  href="#acustico" onClick='getDataALLAcoustic()'>Tutto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overall-comfort-row" > <!--CREO 2 COLONNE-->
+                    <div class="two-columns-pie-acoustic">
+                        <div class="charts-card">
+                            <div id="db-chart"></div>
+                        </div>
+
+                        <div class="charts-card">
+                            <h5 style="text-align: center; font-weight: bold">Ore Rumore Sopra limiti <br>(%) Settimanale</h5>
+                            <div id="db-sopra-soglia"></div>
+                        </div>
+            
+
+                    </div>
+                    <div class="charts-card">
+                        <div id="history-db-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="visivo" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3>COMFORT VISIVO</h3>
+                </div>
+                <div class="main-title" style="margin-top: 10px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filtri Temporali<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a  href="#visivo" onClick="getDataDayVisive()">Ultime 24h (Default)</a></li>
+                                <li><a  href="#visivo" onClick='getData72Visive()'>Ultime 72h</a></li>
+                                <li><a  href="#visivo" onClick='getDataWeekVisive()'>Settimana</a></li>
+                                <li><a  href="#visivo" onClick='getDataALLVisive()'>Tutto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="acoustic-comfort-row" >
+                
+                    <div class="two-cards">
+                        <div id="lux_medi" class="card">
+                            <div class="card-inner">
+                                <h4> LUX medi rilevati - (8/14)</h4>
+                                <span class="material-symbols-outlined">lightbulb</span>
+                            </div>
+                            <h3 id="lux_medi_val">NO DATA</h3>
+                        </div>
+    
+                        <div id="lux_inst" class="card">
+                            <div class="card-inner">
+                                <h4>ORE ILLUMINAZIONE NON OTTIMALE - Settimanale</h4>
+                                <span class="material-symbols-outlined">
+                                    lightbulb
+                                    </span>
+                            </div>
+                            <h3 id="lux_inst_val">NO DATA</h3>
+                        </div>    
+    
+                    </div>
+    
+                    <div class="charts-card-overall-comfort">                
+                        <div id="lux-history-chart"></div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div id="statistiche" class="row wow fadeInUp">
+                <div class="linea"></div>
+                <div class="main-title">
+                    <h3>Grafici Avanzati</h3>
+                </div>
+                <div class="charts" >
+                    <div id="container_immagine" class="charts-card">
+                        <h3 class="chart-title" style="margin-bottom: 20px;">Adaptive Thermal Comfort Plot</h3>
+                        <img src="images/advanced/adaptive_0.png">
+                        
+                        
+                    </div>
+        
+                    <div id="container_immagine_2" class="charts-card">
+                        <h3 class="chart-title">A cosa serve?</h3>
+                        <p> L'adaptive thermal comfort plot è un grafico utilizzato per visualizzare i livelli di comfort termico degli occupanti 
+                            di uno spazio abitativo in relazione alle condizioni ambientali. 
+                            Mostra come le persone si adattano e si abituano alle condizioni termiche del loro ambiente. Generalmente si usa per case nelle quali non è previsto condizionamento meccanico (ARIA CONDIZIONATA)
+                            Questo grafico, in particolare, aiuta a valutare e comprendere 
+                            il comfort termico di un edificio o di uno spazio specifico e può guidare 
+                            il processo di progettazione per creare condizioni termiche più confortevoli per gli occupanti.
+                            Il grafico proposto identifica molteplici zone contraddistinte dalle linee rosse mostrate.
+                            Ogni zona dello spazio cosi delimitata richiama un livello di comfort per un totale di 3 Livelli (le 3 linee rosse).
+                            
+                            
+                        </p>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        
+
+        </div>
+
+    </div>
+
+  
+   
+      <!--CDN LIBRERIA PER GRAFICI--> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.0/apexcharts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+      <!--CUSTOM JS PER LA PAGINA MIA-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+
+      <script>
+        function openUserCard() {
+            const userCard = document.querySelector('.user-card');
+            userCard.style.display = userCard.style.display === 'block' ? 'none' : 'block';
+
+            }
+
+       
+
+      </script>
+
+    
+    <script src="js/aggiornamento_dinamico/update.js"></script> 
+    <script src="js/aggiornamento_dinamico/update_tendina_kits.js"></script> 
+
+
+    <script src="js/aggiornamento_dinamico/update_Cards_real_time.js"></script> 
+    <script src="js/aggiornamento_dinamico/updateOverall.js"></script>
+
+
+    
+
+    <script src="js/script_graphs/overall_comfort/radial-bar.js"></script>
+    
+    <script src="js/script_graphs/qualità_aria/tachimetro.js"></script>
+    <script src="js/script_graphs/qualità_aria/CO2.js"></script>
+    <script src="js/script_graphs/qualità_aria/PM10.js"></script>
+    <script src="js/script_graphs/qualità_aria/air_speed.js"></script>
+    <script src="js/script_graphs/qualità_aria/co2_out.js"></script>
+
+    <script src="js/script_graphs/Comfort_termico/ppd_torta.js"></script>
+    <script src="js/script_graphs/Comfort_termico/pmv_history.js"></script>
+    <script src="js/script_graphs/Comfort_termico/mrt.js"></script>
+    <script src="js/script_graphs/Comfort_termico/temp.js"></script>
+    <script src="js/script_graphs/comfort acustico/pie_db.js"></script>
+    <script src="js/script_graphs/comfort acustico/db_history.js"></script>
+    <script src="js/script_graphs/comfort_visivo/lux_hist.js"></script>
+    <script src="js/script_graphs/comfort_visivo/lux_cards.js"></script>
+    <script src="js/aggiornamento_dinamico/colorazione_cards_real_time.js"></script>
+    <script src="js/aggiornamento_dinamico/colorazione_cards_thermal.js"></script>
+    <script src="js/aggiornamento_dinamico/colorazione_cards_visive.js"></script>
+    <script src="js/script_graphs/qualità_aria/iaq_update_tendina.js"></script>
+    <script src="js/script_graphs/Comfort_termico/thermal_update_tendina.js"></script>
+    <script src="js/script_graphs/comfort acustico/acustic_update_tendina.js"></script>
+    <script src="js/script_graphs/comfort_visivo/visive_update_tendina.js"></script>
+
+</body>
+</html>
